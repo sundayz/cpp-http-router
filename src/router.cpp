@@ -54,8 +54,10 @@ namespace route {
     if (!regex_match(route->url, sm_values, path.re)) {
       return false;
     }
-  
-    if (sm_values.size() < 1) return true;
+
+    if (sm_values.empty()) {
+      return true;
+    }
 
     for (auto i = 0; i < sm_values.size() - 1; i++) {
       std::string key = path.keys[i];
