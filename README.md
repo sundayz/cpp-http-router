@@ -1,5 +1,5 @@
 # SYNOPSIS
-A very simple request router for C++
+A very simple request router for C++17. You can use this with embeddable HTTP servers which do not provide a router, for example [Cesanta's Mongoose](https://github.com/cesanta/mongoose).
 
 # EXAMPLE
 This example uses the [`libuv-http`](https://github.com/hij1nx/libuv-http)
