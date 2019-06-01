@@ -32,13 +32,5 @@ int main() {
 }
 ```
 
-# INSTALL
-```bash
-clib install hij1nx/route
-```
-
 # TEST
-```bash
-make
-```
-
+Build the test target with `cmake --build <YOUR BUILD DIRECTORY> --target http-router-test`, then run the executable.
