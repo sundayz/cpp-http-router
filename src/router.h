@@ -56,15 +56,6 @@ class Route {
     // from the url and return a match instance.
     //
     Match set(const std::string& u);
-
-    Route(/* options */) {
-      //
-      // TODO
-      // Possibly support strict mode, wild cards, etc.
-      //
-    }
-    ~Route() {
-    }
 };
 
 class Match {
@@ -79,7 +70,6 @@ class Match {
     bool test(const std::string& tmpl);
 
     Match(Route &r) : route(&r) {}
-    ~Match() {}
 };
 
 }
