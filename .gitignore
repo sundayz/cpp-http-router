@@ -1,4 +1,34 @@
-test
-deps
-build
+# IDE files
+.idea/
+.vscode/
 
+# Build directories
+cmake-build-debug/
+cmake-build-release/
+build/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
