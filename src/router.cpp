@@ -9,11 +9,11 @@ namespace route {
     return m;
   }
 
-  std::string Match::get(const std::string& key) {
+  std::optional<std::string> Match::get(const std::string& key) {
     if (pairs.count(key)) {
       return pairs.at(key);
     }
-    return "";
+    return std::nullopt;
   }
 
   bool Match::test(const std::string& tmpl) {

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <map>
+#include <optional>
 
 namespace route {
 
@@ -66,7 +67,7 @@ class Match {
 
   public:
     int keys;
-    std::string get(const std::string& key);
+    std::optional<std::string> get(const std::string& key);
     bool test(const std::string& tmpl);
 
     Match(Route &r) : route(&r) {}
