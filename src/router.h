@@ -10,14 +10,12 @@
 
 namespace route {
 
-using namespace std;
-
 class Match;
 class Route;
 
 struct Path {
-  regex re;
-  vector<string> keys;
+    std::regex re;
+    std::vector<std::string> keys;
 };
 
 class Route {
@@ -25,8 +23,8 @@ class Route {
   friend class Match;
 
   private:
-    string url;
-    regex path_to_regex;
+    std::string url;
+    std::regex path_to_regex;
 
     //
     // TODO
@@ -37,19 +35,19 @@ class Route {
     //
     // a pattern used to replace the url template's "captures".
     // 
-    const string capture_pattern = "(?:([^\\/]+?))";
+    const std::string capture_pattern = "(?:([^\\/]+?))";
 
     //
     // a pattern for finding "captures" in a url template.
     //
-    const string path_pattern = ":([^\\/]+)?";
+    const std::string path_pattern = ":([^\\/]+)?";
 
     //
     // cache each regex and its keys as it is created by the 
     // test method.
     // 
 
-    map<string, Path> cache;
+    std::map<std::string, Path> cache;
 
   public:
 
@@ -57,7 +55,7 @@ class Route {
     // set the url for this instance, create a regex
     // from the url and return a match instance.
     //
-    Match set(const string& u); 
+    Match set(const std::string& u);
 
     Route(/* options */) {
       //
@@ -73,18 +71,17 @@ class Match {
 
   private:
     Route *route;
-    map<string, string> pairs;
+    std::map<std::string, std::string> pairs;
 
   public:
     int keys;
-    string get(const string& key);
-    bool test(const string& tmpl);
+    std::string get(const std::string& key);
+    bool test(const std::string& tmpl);
 
     Match(Route &r) : route(&r) {}
     ~Match() {}
 };
 
-} // namespace url
+}
 
 #endif
-

@@ -6,10 +6,10 @@ using namespace route;
 
 #define ASSERT(message, ...) do { \
     if(!(__VA_ARGS__)) { \
-      cerr << "FAIL: " << message << endl; \
+      std::cerr << "FAIL: " << message << std::endl; \
     } \
     else { \
-      cout << "OK: " << message << endl; \
+      std::cout << "OK: " << message << std::endl; \
     } \
 } while(0);
 
@@ -22,7 +22,7 @@ int main() {
   ASSERT("true is true", true == true);
 
   int r;
-  string s;
+  std::string s;
 
 
   match = route.set("/short");
